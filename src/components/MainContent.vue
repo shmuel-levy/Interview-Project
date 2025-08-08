@@ -1,135 +1,100 @@
 <template>
   <div id="magazine_main">
-    <!-- Top banner placeholder -->
-    <div class="centered hp_slide1 gap_bottom padding_top">
-      <div id="hp_top_banner">
-        <div class="trg_banner bannerCls show_in_desktop" style="position:relative; z-index:1;">
-          <a target="_blank" rel="nofollow" href="#">
-            <img alt="" style="width:100%; height:260px; object-fit: cover;" :src="topBannerUrl">
-          </a>
-        </div>
-      </div>
-
-      <div class="hp_head_order">
-        <div class="hp_grid">
-          <div class="main_side">
-            <!-- Head main article -->
-            <div class="gap_bottom_head">
-              <section class="mgz_widget widget_head_main_articles mbl_section mbl_section_no_main head_articles">
-                <ArticleCard
-                  v-if="headArticle"
-                  :variant="'head'"
-                  :position="1"
-                  :link="headArticle.link"
-                  :image-url="headArticle.imageUrl"
-                  :category-label="headArticle.categoryLabel"
-                  :category-color="headArticle.categoryColor"
-                  :title="headArticle.title"
-                  :subtitle="headArticle.subtitle"
-                  :date="headArticle.date"
-                  :author="headArticle.author"
-                />
-              </section>
-            </div>
-
-            <!-- List of articles -->
-            <div class="gap_bottom2">
-              <section class="mgz_widget widget_head_main_articles mbl_section mbl_section_no_main head_articles">
-                <ArticleCard
-                  v-for="(article, idx) in listArticles"
-                  :key="article.id"
-                  :variant="'list'"
-                  :position="idx + 1"
-                  :link="article.link"
-                  :image-url="article.imageUrl"
-                  :category-label="article.categoryLabel"
-                  :category-color="article.categoryColor"
-                  :title="article.title"
-                  :subtitle="article.subtitle || ''"
-                  :date="article.date"
-                  :author="article.author"
-                  picture-radius="mbl_radius"
-                />
-              </section>
-            </div>
+    <!-- Centered Grid Layout -->
+    <div class="centered_container">
+      <div class="content_grid">
+        <!-- Ad Card Section (Left) -->
+        <div class="ad_section">
+          <div class="ad_card">
+            <img 
+              src="@/styles/images/fce81dc36dbc484df5f5df58c9264a70e58b8455.png" 
+              alt="Advertisement"
+              class="ad_image"
+            />
           </div>
-
-          <!-- Left side column (most viewed + newsletter + banners) simplified -->
-          <div class="left_side">
-            <section class="mgz_widget hp_more_items mbl_list">
-              <ArticleCard
-                v-for="(mv, idx) in mostViewed"
-                :key="mv.id"
-                :variant="'mostViewed'"
-                :position="idx + 1"
-                :link="mv.link"
-                :image-url="mv.imageUrl"
-                :category-label="mv.categoryLabel"
-                :category-color="mv.categoryColor"
-                :title="mv.title"
-                :date="mv.date"
-                :author="mv.author"
-              />
-            </section>
-
-            <div class="gap_bottom columns">
-              <div class="newsletter box small" id="newsletter_widget">
-                <form @submit.prevent>
-                  <div class="text">
-                    <h3>הצטרפו לניוזלטר של מרכז הנדל"ן</h3>
-                    <div class="short_text">וקבלו עדכונים חמים ישירות למייל</div>
-                  </div>
-                  <ul>
-                    <li>
-                      <input type="text" name="first_name" placeholder="שם פרטי">
-                      <input type="text" name="last_name" placeholder="שם משפחה">
-                    </li>
-                    <li>
-                      <input type="email" name="email" placeholder="כתובת מייל" required>
-                    </li>
-                  </ul>
-                  <li class="check"><input type="checkbox" required><span> אני מאשר/ת קבלת דיוור </span></li>
-                  <li class="sumbit_container"><input class="submit" type="submit" value="שליחה"></li>
-                </form>
+          
+          <!-- New Article Card Under Ad -->
+          <div class="article_card_under_ad">
+            <div class="article_content_under_ad">
+              <div class="image_section_under_ad">
+                <img 
+                  src="@/styles/images/63d2c569548bcca3e09f39c763b4e81f354b9081.png" 
+                  alt="Article Image"
+                  class="article_image_under_ad"
+                />
+              </div>
+              <div class="text_section_under_ad">
+                <h3 class="article_title_under_ad">אושרה תוכנית העיצוב של צמח המרמן ואזורים למגדל יוקרה במתחם דפנה</h3>
+                <p class="article_subtitle_under_ad">כשנתיים לאחר הזכייה במכרז דיירים, אושרה תוכנית העיצוב האדריכלי לפרויקט פינוי-בינוי במסגרתו ייהרסו במרכז ת"א 66 דירות וייבנה מגדל בן 25 קומות</p>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </div>
 
-    <!-- Below sections banner placeholder -->
-    <div class="centered gap_bottom">
-      <div class="trg_banner bannerCls show_in_desktop" style="position:relative; z-index:1;">
-        <a target="_blank" rel="nofollow" href="#">
-          <img alt="" style="width:100%; height:200px; object-fit: cover;" :src="sectionsBannerUrl">
-        </a>
+        <!-- Most Viewed Articles Section (Right) -->
+        <div class="most_viewed_section">
+          <div class="title_container">
+            <h2 class="most_viewed_title">הכתבות הנצפות ביותר</h2>
+          </div>
+          
+          <!-- New Article Card -->
+          <div class="article_card_new">
+            <img 
+              src="@/styles/images/1d939f5e91da93a4dc75c07c5f635f3a1d010597 (1).jpg" 
+              alt="Article Image"
+              class="article_image_new"
+            />
+            <div class="article_text_new">
+              <p>מבינה מלאכותית ועד סדרה בנטפליקס: מה יכולים משווקי הנדל"ן בישראל ללמוד מהקולגות בניו יורק?</p>
+            </div>
+          </div>
+          
+          <!-- Duplicate Article Card -->
+          <div class="article_card_new">
+            <img 
+              src="@/styles/images/1d939f5e91da93a4dc75c07c5f635f3a1d010597 (1).jpg" 
+              alt="Article Image"
+              class="article_image_new"
+            />
+            <div class="article_text_new">
+              <p>מבינה מלאכותית ועד סדרה בנטפליקס: מה יכולים משווקי הנדל"ן בישראל ללמוד מהקולגות בניו יורק?</p>
+            </div>
+          </div>
+
+          <div class="articles_container">
+            <ArticleCard
+              v-for="(mv, idx) in mostViewed"
+              :key="mv.id"
+              :variant="'mostViewed'"
+              :position="idx + 1"
+              :link="mv.link"
+              :image-url="mv.imageUrl"
+              :category-label="mv.categoryLabel"
+              :category-color="mv.categoryColor"
+              :title="mv.title"
+              :date="mv.date"
+              :author="mv.author"
+            />
+          </div>
+        </div>
       </div>
     </div>
   </div>
-  
 </template>
 
 <script>
 import { computed } from 'vue'
 import ArticleCard from '@/components/ArticleCard.vue'
-import { getHeadArticle, getListArticles, getMostViewed, getBanners } from '@/data/articles'
+import { getMostViewed } from '@/data/articles'
 
 export default {
   name: 'MainContent',
   components: { ArticleCard },
   setup() {
-    const headArticle = computed(() => getHeadArticle())
-    const listArticles = computed(() => getListArticles())
     const mostViewed = computed(() => getMostViewed())
-    const { top: topBannerUrl, sections: sectionsBannerUrl } = getBanners()
 
     return {
-      headArticle,
-      listArticles,
-      mostViewed,
-      topBannerUrl,
-      sectionsBannerUrl
+      mostViewed
     }
   }
 }
@@ -139,51 +104,251 @@ export default {
 @use "@/styles/variables.scss" as *;
 
 #magazine_main {
-  .centered {
+  .centered_container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 15px;
+    padding-top: 20px;
   }
-  .hp_grid {
+  
+  .content_grid {
     display: grid;
-    grid-template-columns: 1fr 340px;
+    grid-template-columns: 1fr 400px;
     gap: 30px;
-    @media (max-width: 992px) {
-      grid-template-columns: 1fr;
-    }
+    align-items: start;
   }
-  .main_side {
+
+  .ad_section {
     display: flex;
     flex-direction: column;
-  }
-  .left_side {
-    display: flex;
-    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
     gap: 20px;
   }
 
-  .newsletter.box.small {
+  .ad_card {
+    width: 876px;
+    height: 213.5px;
+    border: 1px solid #5806C7;
+    border-radius: 8px;
+    overflow: hidden;
     background: $white;
-    border-radius: 12px;
-    padding: 16px;
-    box-shadow: 0 2px 16px rgba(0,0,0,0.06);
-    form {
+    transition: all 0.3s ease;
+
+    &:hover {
+      box-shadow: 0 4px 12px rgba(88, 6, 199, 0.15);
+      transform: translateY(-2px);
+    }
+  }
+
+  .ad_image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .article_card_under_ad {
+    width: 876px;
+    height: 314px;
+    border: 1px solid #5806C7;
+    border-radius: 8px;
+    overflow: hidden;
+    background: $white;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+
+    &:hover {
+      box-shadow: 0 4px 12px rgba(88, 6, 199, 0.15);
+      transform: translateY(-2px);
+    }
+  }
+
+  .article_content_under_ad {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    padding: 20px;
+  }
+
+  .text_section_under_ad {
+    width: 311px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-right: 20px;
+
+    .article_title_under_ad {
+      width: 311px;
+      height: 114px;
+      font-family: "Futurism", sans-serif;
+      font-weight: 700;
+      font-style: bold;
+      font-size: 32px;
+      line-height: 100%;
+      letter-spacing: 0%;
+      text-align: right;
+      color: $black;
+      margin: 0 0 20px 0;
+      padding: 0;
+      direction: rtl;
+    }
+
+    .article_subtitle_under_ad {
+      width: 311px;
+      height: 108px;
+      font-family: "Futurism", sans-serif;
+      font-weight: 400;
+      font-style: regular;
+      font-size: 18px;
+      line-height: 150%;
+      letter-spacing: 0%;
+      text-align: right;
+      color: $black;
+      margin: 0;
+      padding: 0;
+      direction: rtl;
+    }
+  }
+
+  .image_section_under_ad {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .article_image_under_ad {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
       display: block;
-      .text {
-        margin-bottom: 10px;
-        h3 { font-size: 18px; color: $black; margin-bottom: 5px; }
-        .short_text { font-size: 14px; color: rgba($black, 0.75); }
-      }
-      ul { list-style: none; display: grid; gap: 10px; }
-      input[type="text"], input[type="email"] {
-        width: 100%;
-        border: 1px solid $light-grey;
-        border-radius: 8px;
-        padding: 10px 12px;
-        font-size: 14px;
-      }
-      .check { display: flex; align-items: center; gap: 8px; margin: 8px 0; }
-      .submit { background: $purple-main; color: $white; border: none; border-radius: 8px; padding: 10px 14px; cursor: pointer; }
+    }
+  }
+
+  .most_viewed_section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .title_container {
+    width: 292px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 12px;
+    margin-bottom: 20px;
+    margin: 0 auto 20px auto;
+  }
+
+  .most_viewed_title {
+    font-family: "Futurism", sans-serif;
+    font-weight: 700;
+    font-style: bold;
+    font-size: 32px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: right;
+    color: $black;
+    margin: 0;
+    padding: 0;
+  }
+
+  .article_card_new {
+    width: 292px;
+    height: 316px;
+    border: 1px solid #5806C7;
+    border-radius: 8px;
+    overflow: hidden;
+    background: $white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 7px;
+    margin: 0 auto 20px auto;
+    transition: all 0.3s ease;
+
+    &:hover {
+      box-shadow: 0 4px 12px rgba(88, 6, 199, 0.15);
+      transform: translateY(-2px);
+    }
+  }
+
+  .article_image_new {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 4px;
+    display: block;
+  }
+
+  .article_text_new {
+    padding: 10px 0;
+    
+    p {
+      font-size: 16px;
+      font-weight: 500;
+      color: $black;
+      line-height: 1.4;
+      margin: 0;
+      text-align: right;
+      direction: rtl;
+    }
+  }
+
+  .articles_container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  // Responsive adjustments
+  @media (max-width: 1200px) {
+    .content_grid {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+    
+    .ad_card {
+      width: 100%;
+      max-width: 876px;
+      height: auto;
+      aspect-ratio: 876 / 213.5;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .content_grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .most_viewed_section {
+      max-width: 100%;
+    }
+    
+    .title_container {
+      width: 100%;
+      max-width: 292px;
+    }
+    
+    .most_viewed_title {
+      font-size: 28px;
+    }
+
+    .article_card_new {
+      width: 100%;
+      max-width: 292px;
+      height: auto;
+      aspect-ratio: 292 / 316;
+    }
+
+    .ad_card {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 876 / 213.5;
     }
   }
 }

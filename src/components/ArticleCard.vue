@@ -79,58 +79,149 @@ export default {
 
 .article_block {
   display: block;
+  width: 100%;
+  border: 1px solid #5806C7;
+  border-radius: 8px;
+  overflow: hidden;
+  background: $white;
+  transition: all 0.3s ease;
+
+  &:hover {
+    box-shadow: 0 4px 12px rgba(88, 6, 199, 0.15);
+    transform: translateY(-2px);
+  }
+
   .article_pic {
     position: relative;
     display: block;
+    width: 100%;
+    
     span {
       display: block;
       width: 100%;
-      padding-top: 56.25%;
+      padding-top: 56.25%; // 16:9 aspect ratio
       background-size: cover;
       background-position: center;
-      border-radius: 10px;
+      border-radius: 8px 8px 0 0;
     }
+    
     &.bottom_border_red span {
-      box-shadow: 0 4px 0 0 $orange-main inset;
+      box-shadow: 0 4px 0 0 #5806C7 inset; // Changed from orange to purple
     }
+    
     &.mbl_radius span {
       border-radius: 10px;
     }
+    
     .article_category {
       position: absolute;
-      right: 10px;
-      bottom: 10px;
-      background: var(--white);
-      color: var(--black);
-      padding: 6px 10px;
+      right: 12px;
+      bottom: 12px;
+      background: $white;
+      color: $black;
+      padding: 6px 12px;
       border-radius: 6px;
       font-size: 12px;
+      font-weight: 500;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      
       &.big {
         font-size: 13px;
+        padding: 8px 14px;
       }
     }
   }
 
   .content {
-    padding-top: 10px;
+    padding: 16px;
+    
     h3 {
-      font-size: 20px;
+      font-size: 18px;
+      font-weight: 600;
       color: $black;
-      margin-bottom: 6px;
-      line-height: 1.3;
-    }
-    h4 {
-      font-size: 16px;
-      color: rgba($black, 0.85);
+      margin-bottom: 8px;
       line-height: 1.4;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
     }
+    
+    h4 {
+      font-size: 14px;
+      color: rgba($black, 0.8);
+      line-height: 1.4;
+      margin-bottom: 8px;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    
     .metadata_wrapper {
       display: flex;
-      gap: 10px;
+      gap: 12px;
       margin-bottom: 8px;
+      align-items: center;
+      
       .info_item {
         font-size: 12px;
-        color: rgba($black, 0.7);
+        color: rgba($black, 0.6);
+        font-weight: 400;
+        
+        &.date {
+          color: rgba($black, 0.7);
+        }
+        
+        &.lecturer {
+          color: rgba($black, 0.8);
+        }
+      }
+    }
+  }
+
+  // Head article variant (featured article)
+  &.head {
+    .content {
+      padding: 20px;
+      
+      h3 {
+        font-size: 22px;
+        line-height: 1.3;
+        margin-bottom: 12px;
+      }
+      
+      h4 {
+        font-size: 16px;
+        margin-bottom: 12px;
+      }
+      
+      .metadata_wrapper {
+        margin-bottom: 12px;
+        
+        .info_item {
+          font-size: 13px;
+        }
+      }
+    }
+  }
+
+  // Most viewed variant
+  &.mostViewed {
+    .content {
+      padding: 12px;
+      
+      h3 {
+        font-size: 16px;
+        margin-bottom: 6px;
+      }
+      
+      .metadata_wrapper {
+        margin-bottom: 6px;
+        
+        .info_item {
+          font-size: 11px;
+        }
       }
     }
   }
