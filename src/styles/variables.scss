@@ -1,0 +1,61 @@
+// Color Variables
+$color-primary: #5807CA;
+$color-black: #0B0119;
+$bg-new: #fbf8ff;
+$bg-color: #5807CA;
+$small-gap: 12px;
+$gap: 15px;
+$mid-gap: 32px;
+$big-gap: 45px;
+$h1-size: 40px;
+$h2-size: 32px;
+$h3-size: 22px;
+$h4-size: 18px;
+$h5-size: 16px;
+$h6-size: 14px;
+$section-size: 45px;
+$hp-grid-gap: 30px;
+$font: "Heebo", sans-serif;
+$font2: "Heebo", sans-serif;
+$light-grey: #D8D6DA;
+$orange: #ff4f00;
+$purple-light: #EDE8F5;
+$purple-main: #5806C7;
+$orange-main: #F15723;
+$text-main: #404040;
+$logo-width: 180px;
+$bottom-footer-bg: #130822;
+$white: #fff;
+$black: #404040;
+
+// CSS Custom Properties for Vue components
+:root {
+  --color: #{$color-primary};
+  --color_black: #{$color-black};
+  --bg-new: #{$bg-new};
+  --bg-color: #{$bg-color};
+  --small-gap: #{$small-gap};
+  --gap: #{$gap};
+  --mid-gap: #{$mid-gap};
+  --big-gap: #{$big-gap};
+  --h1-size: #{$h1-size};
+  --h2-size: #{$h2-size};
+  --h3-size: #{$h3-size};
+  --h4-size: #{$h4-size};
+  --h5-size: #{$h5-size};
+  --h6-size: #{$h6-size};
+  --section-size: #{$section-size};
+  --hp_grid_gap: #{$hp-grid-gap};
+  --font: #{$font};
+  --font2: #{$font2};
+  --light-grey: #{$light-grey};
+  --orange: #{$orange};
+  --purple_light: #{$purple-light};
+  --purple-main: #{$purple-main};
+  --orange-main: #{$orange-main};
+  --text-main: #{$text-main};
+  --logo-width: #{$logo-width};
+  --bottom-footer-bg: #{$bottom-footer-bg};
+  --white: #{$white};
+  --black: #{$black};
+}

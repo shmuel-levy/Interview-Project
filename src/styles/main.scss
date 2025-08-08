@@ -1,0 +1,85 @@
+@use './variables' as *;
+
+// Global Reset and Base Styles
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: $font;
+}
+
+html, body {
+  height: 100%;
+  direction: rtl;
+  padding: 0;
+  margin: 0;
+  background: var(--bg-new);
+  text-align: right;
+  color: #333333;
+  font-size: 18px;
+  scroll-behavior: smooth;
+}
+
+html, body, input, textarea, select {
+  font: 18px $font;
+  line-height: 1.2;
+}
+
+body.rtl {
+  direction: rtl;
+  text-align: right;
+}
+
+// Scrollbar Styling
+*::-webkit-scrollbar {
+  width: 10px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: #666;
+}
+
+*::-webkit-scrollbar-track {
+  background: #ddd;
+}
+
+// Page Container
+#app-container {
+  z-index: 0;
+  
+  @media (min-width: 600px) {
+    padding-top: 109px;
+  }
+}
+
+// Utility Classes
+.show_in_desktop {
+  @media (max-width: 768px) {
+    display: none !important;
+  }
+}
+
+.show_in_mobile {
+  @media (min-width: 769px) {
+    display: none !important;
+  }
+}
+
+// Flex Utilities
+.flex_col {
+  display: flex;
+  flex-direction: column;
+}
+
+// Spacing Utilities
+.gap_bottom {
+  margin-bottom: $gap;
+}
+
+.gap_bottom2 {
+  margin-bottom: $gap * 2;
+}
+
+.gap_bottom_head {
+  margin-bottom: $big-gap;
+}
