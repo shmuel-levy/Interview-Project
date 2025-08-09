@@ -29,6 +29,40 @@
               </div>
             </div>
           </div>
+          
+          <!-- Three Image Cards Under Article -->
+          <div class="three_images_container">
+            <div class="single_image_card">
+              <img 
+                src="@/styles/images/1d939f5e91da93a4dc75c07c5f635f3a1d010597 (1).jpg" 
+                alt="Image 1"
+                class="single_image"
+              />
+              <div class="image_text">
+                <p>בכירה במשרד השיכון: "הרחבת הכפר רג'ר נועדה לאפשר למשפחות מהחלק הצפוני דיור משופר"</p>
+              </div>
+            </div>
+            <div class="single_image_card">
+              <img 
+                src="@/styles/images/1d939f5e91da93a4dc75c07c5f635f3a1d010597 (1).jpg" 
+                alt="Image 2"
+                class="single_image"
+              />
+              <div class="image_text">
+                <p>גבאי גייסה 112 מיליון מתוך 144 מיליון שקל בגיוס לסדרת אג"ח חדשה</p>
+              </div>
+            </div>
+            <div class="single_image_card">
+              <img 
+                src="@/styles/images/1d939f5e91da93a4dc75c07c5f635f3a1d010597 (1).jpg" 
+                alt="Image 3"
+                class="single_image"
+              />
+              <div class="image_text">
+                <p>יש לי חדר משלי: כך תעצבו לנער המתבגר חדר פרקטי, עם טאצ' אישי ולא משעמם</p>
+              </div>
+            </div>
+          </div>
         </div>
 
         <!-- Most Viewed Articles Section (Right) -->
@@ -60,22 +94,6 @@
               <p>מבינה מלאכותית ועד סדרה בנטפליקס: מה יכולים משווקי הנדל"ן בישראל ללמוד מהקולגות בניו יורק?</p>
             </div>
           </div>
-
-          <div class="articles_container">
-            <ArticleCard
-              v-for="(mv, idx) in mostViewed"
-              :key="mv.id"
-              :variant="'mostViewed'"
-              :position="idx + 1"
-              :link="mv.link"
-              :image-url="mv.imageUrl"
-              :category-label="mv.categoryLabel"
-              :category-color="mv.categoryColor"
-              :title="mv.title"
-              :date="mv.date"
-              :author="mv.author"
-            />
-          </div>
         </div>
       </div>
     </div>
@@ -83,20 +101,8 @@
 </template>
 
 <script>
-import { computed } from 'vue'
-import ArticleCard from '@/components/ArticleCard.vue'
-import { getMostViewed } from '@/data/articles'
-
 export default {
-  name: 'MainContent',
-  components: { ArticleCard },
-  setup() {
-    const mostViewed = computed(() => getMostViewed())
-
-    return {
-      mostViewed
-    }
-  }
+  name: 'MainContent'
 }
 </script>
 
@@ -129,7 +135,6 @@ export default {
   .ad_card {
     width: 876px;
     height: 213.5px;
-    border: 1px solid #5806C7;
     border-radius: 8px;
     overflow: hidden;
     background: $white;
@@ -151,7 +156,6 @@ export default {
   .article_card_under_ad {
     width: 876px;
     height: 314px;
-    border: 1px solid #5806C7;
     border-radius: 8px;
     overflow: hidden;
     background: $white;
@@ -225,6 +229,55 @@ export default {
     }
   }
 
+  .three_images_container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-top: 20px;
+  }
+
+  .single_image_card {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    overflow: hidden;
+    background: $white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+
+    &:hover {
+      box-shadow: 0 4px 12px rgba(88, 6, 199, 0.15);
+      transform: translateY(-2px);
+    }
+  }
+
+  .single_image {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+    display: block;
+  }
+
+  .image_text {
+    padding: 8px;
+    flex: 1;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    p {
+      font-size: 12px;
+      font-weight: 400;
+      color: $black;
+      line-height: 1.3;
+      margin: 0;
+      text-align: right;
+      direction: rtl;
+    }
+  }
+
   .most_viewed_section {
     display: flex;
     flex-direction: column;
@@ -255,12 +308,14 @@ export default {
     color: $black;
     margin: 0;
     padding: 0;
+    border-bottom: 1px solid #5806C7;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
   }
 
   .article_card_new {
     width: 292px;
     height: 316px;
-    border: 1px solid #5806C7;
     border-radius: 8px;
     overflow: hidden;
     background: $white;
