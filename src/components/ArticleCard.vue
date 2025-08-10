@@ -32,7 +32,7 @@
 export default {
   name: 'ArticleCard',
   props: {
-    variant: { type: String, default: 'list' }, // 'head' | 'list' | 'mostViewed'
+    variant: { type: String, default: 'list' },
     position: { type: [Number, String], default: '' },
     link: { type: String, required: true },
     imageUrl: { type: String, required: true },
@@ -43,7 +43,7 @@ export default {
     date: { type: String, default: '' },
     author: { type: String, default: '' },
     noShadow: { type: Boolean, default: true },
-    pictureRadius: { type: String, default: 'none' } // 'none' | 'mbl_radius'
+    pictureRadius: { type: String, default: 'none' }
   },
   computed: {
     backgroundStyle() {
@@ -99,14 +99,14 @@ export default {
     span {
       display: block;
       width: 100%;
-      padding-top: 56.25%; // 16:9 aspect ratio
+      padding-top: 56.25%;
       background-size: cover;
       background-position: center;
       border-radius: 8px 8px 0 0;
     }
     
     &.bottom_border_red span {
-      box-shadow: 0 4px 0 0 #5806C7 inset; // Changed from orange to purple
+      box-shadow: 0 4px 0 0 #5806C7 inset;
     }
     
     &.mbl_radius span {
@@ -180,7 +180,6 @@ export default {
     }
   }
 
-  // Head article variant (featured article)
   &.head {
     .content {
       padding: 20px;
@@ -206,7 +205,6 @@ export default {
     }
   }
 
-  // Most viewed variant
   &.mostViewed {
     .content {
       padding: 12px;

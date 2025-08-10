@@ -1,6 +1,6 @@
-# Real Estate Magazine Clone
+# Real Estate Magazine - Vue.js Project
 
-A Vue.js 3 application that replicates the design of a real estate magazine website with pixel-perfect implementation.
+A pixel-perfect Vue.js 3 real estate magazine clone built with modern web technologies.
 
 ## 🚀 Features
 
@@ -8,8 +8,9 @@ A Vue.js 3 application that replicates the design of a real estate magazine webs
 - **SCSS** for advanced styling
 - **Vite** for fast development and building
 - **Responsive Design** for desktop and mobile
-- **RTL Support** for Hebrew text
+- **RTL Support** for Hebrew content
 - **Component-based Architecture**
+- **Pixel Perfect** implementation from Figma design
 
 ## 📋 Prerequisites
 
@@ -18,136 +19,75 @@ A Vue.js 3 application that replicates the design of a real estate magazine webs
 
 ## 🛠️ Installation
 
-1. **Clone the repository** (if applicable):
+1. **Clone the repository**
    ```bash
    git clone <repository-url>
    cd real-estate-magazine
    ```
 
-2. **Install dependencies**:
+2. **Install dependencies**
    ```bash
    npm install
    ```
 
-3. **Start development server**:
+3. **Start development server**
    ```bash
    npm run dev
    ```
 
-4. **Open your browser** and navigate to `http://localhost:5173`
+4. **Open your browser**
+   Navigate to `http://localhost:5173`
 
-## 📁 Project Structure
-
-```
-src/
-├── components/
-│   └── Header.vue          # Main header component
-├── styles/
-│   ├── variables.scss       # SCSS variables and CSS custom properties
-│   └── main.scss           # Global styles and reset
-├── App.vue                 # Main application component
-└── main.js                 # Vue application entry point
-```
-
-## 🎨 Design System
-
-### Colors
-- **Primary**: `#5807CA` (Purple)
-- **Background**: `#fbf8ff` (Light purple)
-- **Text**: `#404040` (Dark gray)
-- **Light Gray**: `#D8D6DA`
-
-### Typography
-- **Font Family**: Heebo (Hebrew font)
-- **Base Size**: 18px
-- **Line Height**: 1.2
-
-### Spacing
-- **Small Gap**: 12px
-- **Gap**: 15px
-- **Mid Gap**: 32px
-- **Big Gap**: 45px
-
-## 🔧 Development
-
-### Available Scripts
-
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm run preview` - Preview production build
-
-### Component Development
-
-The project follows Vue.js 3 best practices:
-
-1. **Single File Components** with `<template>`, `<script>`, and `<style>`
-2. **SCSS** for component-specific styles
-3. **Responsive design** with mobile-first approach
-4. **RTL support** for Hebrew content
-
-### Styling Guidelines
-
-- Use SCSS variables from `src/styles/variables.scss`
-- Follow BEM methodology for class naming
-- Implement responsive design with mobile-first approach
-- Use CSS custom properties for dynamic theming
-
-## 📱 Responsive Design
-
-The application is designed to work on:
-
-- **Desktop**: 1200px and above
-- **Tablet**: 768px - 1199px
-- **Mobile**: 320px - 767px
-
-### Breakpoints
-- Mobile: `max-width: 768px`
-- Desktop: `min-width: 769px`
-
-## 🎯 Current Implementation
-
-### Header Component
-- ✅ Desktop and mobile layouts
-- ✅ Navigation menu with all links
-- ✅ Social media icons (SVG)
-- ✅ Search functionality placeholder
-- ✅ Responsive design
-- ✅ RTL support
-- ✅ Hover effects and transitions
-
-### Next Steps
-- [ ] Article components
-- [ ] Homepage layout
-- [ ] Article grid system
-- [ ] Category pages
-- [ ] Search functionality
-- [ ] Mobile menu implementation
-
-## 🚀 Deployment
-
-To build for production:
+## 📦 Build for Production
 
 ```bash
 npm run build
 ```
 
-The built files will be in the `dist/` directory.
+The built files will be in the `dist` directory.
 
-## 📝 Notes
+## 🏗️ Project Structure
 
-- The project uses **Heebo font** for Hebrew text support
-- All IDs and classes have been modified from the original to avoid direct copying
-- SVG icons are embedded for better performance
-- The design follows the original website's structure while being implemented from scratch
+```
+src/
+├── components/
+│   ├── Header.vue          # Navigation header component
+│   ├── MainContent.vue     # Main content layout
+│   └── ArticleCard.vue     # Reusable article card component
+├── styles/
+│   ├── images/             # Image assets
+│   ├── main.scss           # Global styles
+│   └── variables.scss      # SCSS variables
+├── data/
+│   └── articles.js         # Article data
+├── App.vue                 # Root component
+└── main.js                 # Application entry point
+```
 
-## 🤝 Contributing
+## 🎨 Design System
 
-1. Follow Vue.js 3 best practices
-2. Use SCSS for styling
-3. Maintain responsive design
-4. Test on both desktop and mobile
-5. Ensure RTL support for Hebrew content
+- **Typography**: Futurism font family for headings
+- **Colors**: Purple (#5806C7) and Orange (#E2B00D) theme
+- **Layout**: CSS Grid and Flexbox for responsive layouts
+- **Spacing**: Consistent 8px grid system
+
+## 📱 Responsive Breakpoints
+
+- **Desktop**: 1200px and above
+- **Tablet**: 768px - 1199px
+- **Mobile**: Below 768px
+
+## 🔧 Technologies Used
+
+- **Vue.js 3.3.4** - Progressive JavaScript framework
+- **Vite 4.4.5** - Build tool and dev server
+- **SCSS** - Advanced CSS preprocessor
+- **Sass 1.64.1** - SCSS compiler
 
 ## 📄 License
 
-This project is for educational purposes and interview preparation.
+This project is created as a home assignment for a full-stack developer position.
+
+## 👨‍💻 Developer
+
+Built with ❤️ using Vue.js and modern web technologies.

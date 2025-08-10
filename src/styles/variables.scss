@@ -1,4 +1,3 @@
-// Color Variables
 $color-primary: #5807CA;
 $color-black: #0B0119;
 $bg-new: #fbf8ff;
@@ -28,7 +27,6 @@ $bottom-footer-bg: #130822;
 $white: #fff;
 $black: #404040;
 
-// CSS Custom Properties for Vue components
 :root {
   --color: #{$color-primary};
   --color_black: #{$color-black};

@@ -1,9 +1,7 @@
 <template>
   <div id="magazine_main">
-    <!-- Centered Grid Layout -->
     <div class="centered_container">
       <div class="content_grid">
-        <!-- Ad Card Section (Left) -->
         <div class="ad_section">
           <div class="ad_card">
             <img 
@@ -13,7 +11,6 @@
             />
           </div>
           
-          <!-- New Article Card Under Ad -->
           <div class="article_card_under_ad">
             <div class="article_content_under_ad">
               <div class="image_section_under_ad">
@@ -30,7 +27,6 @@
             </div>
           </div>
           
-          <!-- Three Image Cards Under Article -->
           <div class="three_images_container">
             <div class="single_image_card">
               <img 
@@ -64,7 +60,6 @@
             </div>
           </div>
           
-          <!-- Duplicate Three Image Cards -->
           <div class="three_images_container">
             <div class="single_image_card">
               <img 
@@ -98,7 +93,6 @@
             </div>
           </div>
           
-          <!-- New Wide Image Card -->
           <div class="wide_image_card">
             <img 
               src="@/styles/images/741684c936614ed2685328393d8568ae86566eaa.png" 
@@ -108,13 +102,11 @@
           </div>
         </div>
 
-        <!-- Most Viewed Articles Section (Right) -->
         <div class="most_viewed_section">
           <div class="title_container">
             <h2 class="most_viewed_title">הכתבות הנצפות ביותר</h2>
           </div>
           
-          <!-- New Article Card -->
           <div class="article_card_new">
             <img 
               src="@/styles/images/1d939f5e91da93a4dc75c07c5f635f3a1d010597 (1).jpg" 
@@ -126,7 +118,6 @@
             </div>
           </div>
           
-          <!-- Duplicate Article Card -->
           <div class="article_card_new">
             <img 
               src="@/styles/images/1d939f5e91da93a4dc75c07c5f635f3a1d010597 (1).jpg" 
@@ -138,7 +129,6 @@
             </div>
           </div>
           
-          <!-- New Image Card Under Article -->
           <div class="new_image_card">
             <img 
               src="@/styles/images/7fbbda8ab09858a766a391c61727e1fb61b62027.png" 
@@ -147,7 +137,6 @@
             />
           </div>
           
-          <!-- Duplicate Single Image Card -->
           <div class="single_image_card_duplicate">
             <img 
               src="@/styles/images/1d939f5e91da93a4dc75c07c5f635f3a1d010597 (1).jpg" 
@@ -162,7 +151,6 @@
       </div>
     </div>
     
-    <!-- New Section with Gap -->
     <div class="new_section">
       <div class="centered_container">
         <div class="section_title">
@@ -176,7 +164,6 @@
         </div>
         
         <div class="new_section_content">
-          <!-- Left Column - Large Card -->
           <div class="large_card_left">
             <img 
               src="@/styles/images/1d939f5e91da93a4dc75c07c5f635f3a1d010597 (1).jpg" 
@@ -188,7 +175,6 @@
             </div>
           </div>
           
-          <!-- Right Column - Two Smaller Cards -->
           <div class="small_cards_right">
             <div class="small_card">
               <img 
@@ -558,7 +544,6 @@ export default {
     }
   }
 
-  // New Section Styles
   .new_section {
     margin-top: 40px;
     padding-top: 20px;
@@ -705,7 +690,6 @@ export default {
     }
   }
 
-  // Responsive adjustments
   @media (max-width: 1200px) {
     .content_grid {
       grid-template-columns: 1fr;
@@ -727,7 +711,7 @@ export default {
     
     .most_viewed_section {
       max-width: 100%;
-      border-right: none; /* Remove border on small screens */
+      border-right: none;
     }
     
     .title_container {

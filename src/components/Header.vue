@@ -1,22 +1,16 @@
 <template>
   <div class="site-header">
-    <!-- Mobile Header -->
     <div class="mobile-header show_in_mobile">
       <a class="site-logo" href="/" title="מרכז הנדל&quot;ן"></a>
     </div>
 
-    <!-- Desktop Header -->
     <header class="desktop-header show_in_desktop">
-      <!-- Right: Main Logo (spans full header height, not split) -->
       <div class="logo-container">
         <a class="site-logo" href="/" title="מרכז הנדל&quot;ן"></a>
       </div>
 
-      <!-- Left: Header split into two stacked sections -->
       <div class="header-stack">
-        <!-- Top Header Section -->
         <div class="header-top">
-          <!-- Main Navigation Menu -->
           <ul class="main-menu">
             <li><a data-id="14" href="living-real-estate">נדל"ן למגורים</a></li>
             <li><a data-id="15" href="urban-innovation">התחדשות עירונית</a></li>
@@ -28,7 +22,6 @@
             <li><a data-id="45" href="podcast">פודקאסטים</a></li>
           </ul>
 
-          <!-- Social Media Icons (reversed order; X instead of Twitter; Instagram red fill) -->
           <ul class="social-icons-top">
             <li>
               <a class="social-icon instagram" target="_blank" href="https://www.instagram.com/nadlancenter.co.il/?utm_source=site">
@@ -70,7 +63,6 @@
           </ul>
         </div>
 
-        <!-- Bottom Header Section -->
         <div class="header-bottom">
           <ul class="secondary-menu">
             <li><a data-id="49" href="https://madadtama38.co.il/" target="_blank">מדד ההתחדשות העירונית</a></li>
@@ -93,9 +85,6 @@
       </div>
     </header>
 
-    
-
-    <!-- Mobile Menu Button -->
     <div class="mobile-menu-btn show_in_mobile">
       <div class="hamburger-icon">
         <span></span>
@@ -136,14 +125,13 @@ export default {
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-// Desktop Header Grid: Logo (right) + Two stacked sections (left)
 .desktop-header {
   display: grid;
   grid-template-columns: auto 1fr;
   align-items: stretch;
   column-gap: 0;
   padding: 0;
-  direction: rtl; // keep logo on the right in RTL
+  direction: rtl;
   height: auto;
 }
 
@@ -151,15 +139,15 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 160px; // reduced from variable default
-  padding: 0 14px; // slightly smaller side padding
+  width: 160px;
+  padding: 0 14px;
   background: $white;
 
   .site-logo {
     display: block;
     width: 100%;
     max-width: 160px;
-    height: 48px; // reduced height
+    height: 48px;
     background-image: url('@/styles/images/NADLAN-LOGO.png');
     background-repeat: no-repeat;
     background-position: center;
@@ -172,26 +160,25 @@ export default {
   grid-template-rows: auto auto;
 }
 
-// Top Header Section
 .header-top {
   display: flex;
   align-items: center;
   justify-content: space-between;
   background: $purple-main;
   color: $white;
-  padding: 8px; // reduced further
+  padding: 8px;
   transition: all 0.4s ease;
 
   .main-menu {
     display: flex;
     list-style: none;
-    gap: 20px; // tighter
+    gap: 20px;
 
     li a {
       color: $white;
       text-decoration: none;
       font-weight: 500;
-      font-size: 15px; // smaller nav titles
+      font-size: 15px;
       transition: opacity 0.2s ease;
 
       &:hover { opacity: 0.85; }
@@ -220,7 +207,7 @@ export default {
       justify-content: center;
       width: 100%;
       height: 100%;
-      color: var(--orange-main); // icon color via currentColor
+      color: var(--orange-main);
       
       .svg-icon {
         width: 12px;
@@ -228,19 +215,18 @@ export default {
       }
 
       &.instagram {
-        color: $orange-main; // ensure red icon color for instagram
+        color: $orange-main;
       }
     }
   }
 }
 
-// Bottom Header Section
 .header-bottom {
   display: flex;
   align-items: center;
   justify-content: space-between;
   background: $white;
-  padding: 8px; // reduced further
+  padding: 8px;
   overflow: hidden;
   transition: all 0.4s ease;
   box-shadow: 0px 4px 69.7px 0px rgba(88, 6, 199, 0.14);
@@ -249,37 +235,36 @@ export default {
     display: flex;
     list-style: none;
     flex-wrap: wrap;
-    gap: 14px; // tighter
+    gap: 14px;
 
     li a {
       color: $text-main;
       text-decoration: none;
-      font-size: 13px; // smaller
+      font-size: 13px;
       transition: color 0.2s ease;
 
       &:hover { color: $color-primary; }
     }
   }
 
-  /* New search container styles matching spec */
   .search_container {
     display: flex;
-    flex-direction: row-reverse; // place icon on the left edge
+    flex-direction: row-reverse;
     align-items: center;
-    gap: 0; // no gap when collapsed
+    gap: 0;
     border: 1px solid var(--orange-main);
     border-radius: 60px;
-    padding: 0; // perfectly center the icon when collapsed
+    padding: 0;
     color: var(--orange-main);
-    height: 36px; // make an exact circle in collapsed state
-    width: 36px;  // make an exact circle in collapsed state
-    justify-content: center; // center icon in circle
+    height: 36px;
+    width: 36px;
+    justify-content: center;
     transition: width 0.25s ease, padding 0.25s ease, gap 0.25s ease;
 
     &.open {
-      width: 260px; // expanded width
-      padding: 5px 10px; // add inner padding when expanded
-      gap: 8px; // show spacing between icon and input when expanded
+      width: 260px;
+      padding: 5px 10px;
+      gap: 8px;
       justify-content: flex-start;
     }
 
@@ -292,16 +277,16 @@ export default {
       background: transparent;
       border: none;
       color: inherit;
-      cursor: pointer; // pointer on hover
+      cursor: pointer;
       padding: 0;
-      line-height: 0; // remove inline baseline
+      line-height: 0;
     }
 
     .search-icon {
       width: 14px;
       height: 14px;
       flex: 0 0 auto;
-      display: block; // avoid baseline alignment issues
+      display: block;
     }
 
     input {
@@ -313,24 +298,20 @@ export default {
       font-size: 13px;
       color: $text-main;
       &::placeholder {
-        color: $orange-main; // red placeholder text
+        color: $orange-main;
       }
     }
   }
 }
 
-/* Floating Search Popover */
-// removed popover; now integrated into .search_container
-
-// Mobile Header
 .mobile-header {
   padding: 15px;
   border-bottom: 1px solid $light-grey;
 
   .site-logo {
     display: block;
-    width: 110px; // slightly smaller
-    height: 36px; // slightly smaller
+    width: 110px;
+    height: 36px;
     background-image: url('@/styles/images/NADLAN-LOGO.png');
     background-repeat: no-repeat;
     background-position: center;
@@ -338,7 +319,6 @@ export default {
   }
 }
 
-// Mobile Menu Button
 .mobile-menu-btn {
   position: fixed;
   top: 15px;
@@ -370,7 +350,6 @@ export default {
   }
 }
 
-// Responsive
 @media (max-width: 768px) {
   .desktop-header { display: none; }
   .mobile-header { display: block; }

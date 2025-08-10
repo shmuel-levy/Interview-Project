@@ -1,5 +1,3 @@
-// Fake data generators and accessors
-
 const baseImg = (id) => `https://picsum.photos/seed/${id}/800/450`
 const baseThumb = (id) => `https://picsum.photos/seed/${id}/400/225`
 
