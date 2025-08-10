@@ -2,6 +2,13 @@
   <div class="site-header">
     <div class="mobile-header show_in_mobile">
       <a class="site-logo" href="/" title="מרכז הנדל&quot;ן"></a>
+      <div class="mobile-menu-btn" @click="toggleMobileMenu">
+        <div class="hamburger-icon" :class="{ active: isMobileMenuOpen }">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
     </div>
 
     <header class="desktop-header show_in_desktop">
@@ -85,13 +92,60 @@
       </div>
     </header>
 
-    <div class="mobile-menu-btn show_in_mobile">
-      <div class="hamburger-icon">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
+    <div class="mobile-menu-overlay" :class="{ active: isMobileMenuOpen }" @click="closeMobileMenu"></div>
+    
+    <div class="mobile-menu" :class="{ active: isMobileMenuOpen }">
+      <div class="mobile-menu-header">
+        <h3>תפריט</h3>
+        <button class="close-menu-btn" @click="closeMobileMenu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 6L6 18M6 6l12 12"/>
+          </svg>
+        </button>
       </div>
+      
+      <nav class="mobile-nav">
+        <div class="mobile-nav-section">
+          <h4>תפריט ראשי</h4>
+          <ul>
+            <li><a href="living-real-estate">נדל"ן למגורים</a></li>
+            <li><a href="urban-innovation">התחדשות עירונית</a></li>
+            <li><a href="fruitfull-real-estate">נדל"ן מניב והשקעות</a></li>
+            <li><a href="magazine/category/182">דעות וניתוחים</a></li>
+            <li><a href="magazine/category/1768">חדשות הענף</a></li>
+            <li><a href="design-architect">עיצוב ואדריכלות</a></li>
+            <li><a href="vod">נדל"ן TV</a></li>
+            <li><a href="podcast">פודקאסטים</a></li>
+          </ul>
+        </div>
+        
+        <div class="mobile-nav-section">
+          <h4>תפריט משני</h4>
+          <ul>
+            <li><a href="https://madadtama38.co.il/" target="_blank">מדד ההתחדשות העירונית</a></li>
+            <li><a href="/calculator">מחשבונים</a></li>
+            <li><a href="https://tzair.coursesold.nadlancenter.co.il/" target="_blank">נדל"ן בראש צעיר</a></li>
+            <li><a href="about">אודות מרכז הנדל"ן</a></li>
+            <li><a href="https://z-report.courses.nadlancenter.co.il/" target="_blank">מכללת מרכז הנדל"ן</a></li>
+            <li><a href="contact-us">צור קשר</a></li>
+          </ul>
+        </div>
+        
+        <div class="mobile-nav-section">
+          <h4>עקבו אחרינו</h4>
+          <div class="mobile-social-icons">
+            <a href="https://www.instagram.com/nadlancenter.co.il/" target="_blank" class="mobile-social-icon">
+              <svg viewBox="0 0 448 512" fill="currentColor"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6  -11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5 9 132.1 9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
+            </a>
+            <a href="https://www.facebook.com/merkazhanadlan/" target="_blank" class="mobile-social-icon">
+              <svg viewBox="0 0 512 512" fill="currentColor"><path d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"/></svg>
+            </a>
+            <a href="https://www.youtube.com/@Nadlancente" target="_blank" class="mobile-social-icon">
+              <svg viewBox="0 0 576 512" fill="currentColor"><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/></svg>
+            </a>
+          </div>
+        </div>
+      </nav>
     </div>
   </div>
 </template>
@@ -102,12 +156,31 @@ export default {
   data() {
     return {
       isSearchOpen: false,
+      isMobileMenuOpen: false,
     }
   },
   methods: {
     openSearch() {
       this.isSearchOpen = !this.isSearchOpen
+    },
+    toggleMobileMenu() {
+      this.isMobileMenuOpen = !this.isMobileMenuOpen
+      document.body.style.overflow = this.isMobileMenuOpen ? 'hidden' : ''
+    },
+    closeMobileMenu() {
+      this.isMobileMenuOpen = false
+      document.body.style.overflow = ''
     }
+  },
+  mounted() {
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 768 && this.isMobileMenuOpen) {
+        this.closeMobileMenu()
+      }
+    })
+  },
+  beforeUnmount() {
+    window.removeEventListener('resize', () => {})
   }
 }
 </script>
@@ -305,8 +378,12 @@ export default {
 }
 
 .mobile-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   padding: 15px;
   border-bottom: 1px solid $light-grey;
+  background: $white;
 
   .site-logo {
     display: block;
@@ -320,11 +397,6 @@ export default {
 }
 
 .mobile-menu-btn {
-  position: fixed;
-  top: 15px;
-  right: 15px;
-  z-index: 1001;
-
   .hamburger-icon {
     width: 30px;
     height: 25px;
@@ -343,16 +415,171 @@ export default {
       &:nth-child(1) { top: 0; }
       &:nth-child(2) { top: 8px; }
       &:nth-child(3) { top: 16px; }
-      &:nth-child(4) { top: 24px; }
+    }
+
+    &.active {
+      span {
+        &:nth-child(1) {
+          transform: rotate(45deg) translate(5px, 5px);
+        }
+        &:nth-child(2) {
+          opacity: 0;
+        }
+        &:nth-child(3) {
+          transform: rotate(-45deg) translate(7px, -6px);
+        }
+      }
     }
 
     &:hover span { background: $color-primary; }
   }
 }
 
+.mobile-menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+
+  &.active {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 320px;
+  height: 100vh;
+  background: $white;
+  z-index: 1001;
+  transition: right 0.3s ease;
+  overflow-y: auto;
+  direction: rtl;
+
+  &.active {
+    right: 0;
+  }
+
+  .mobile-menu-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    border-bottom: 1px solid $light-grey;
+    background: $purple-main;
+    color: $white;
+
+    h3 {
+      margin: 0;
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    .close-menu-btn {
+      background: none;
+      border: none;
+      color: $white;
+      cursor: pointer;
+      padding: 5px;
+      border-radius: 4px;
+      transition: background 0.2s ease;
+
+      &:hover {
+        background: rgba(255, 255, 255, 0.1);
+      }
+
+      svg {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+
+  .mobile-nav {
+    padding: 20px;
+
+    .mobile-nav-section {
+      margin-bottom: 30px;
+
+      h4 {
+        color: $purple-main;
+        font-size: 16px;
+        font-weight: 600;
+        margin-bottom: 15px;
+        padding-bottom: 8px;
+        border-bottom: 2px solid $purple-light;
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        li {
+          margin-bottom: 12px;
+
+          a {
+            color: $text-main;
+            text-decoration: none;
+            font-size: 15px;
+            padding: 8px 0;
+            display: block;
+            transition: color 0.2s ease;
+            border-radius: 4px;
+
+            &:hover {
+              color: $purple-main;
+              background: $purple-light;
+              padding-left: 10px;
+            }
+          }
+        }
+      }
+
+      .mobile-social-icons {
+        display: flex;
+        gap: 15px;
+        margin-top: 15px;
+
+        .mobile-social-icon {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 40px;
+          height: 40px;
+          background: $purple-light;
+          border-radius: 50%;
+          color: $purple-main;
+          transition: all 0.2s ease;
+
+          &:hover {
+            background: $purple-main;
+            color: $white;
+            transform: scale(1.1);
+          }
+
+          svg {
+            width: 20px;
+            height: 20px;
+          }
+        }
+      }
+    }
+  }
+}
+
 @media (max-width: 768px) {
   .desktop-header { display: none; }
-  .mobile-header { display: block; }
+  .mobile-header { display: flex; }
 }
 
 @media (min-width: 600px) {
@@ -362,7 +589,37 @@ export default {
 
 @media (min-width: 769px) {
   .mobile-header,
-  .mobile-menu-btn { display: none; }
+  .mobile-menu-btn,
+  .mobile-menu,
+  .mobile-menu-overlay { display: none; }
   .desktop-header { display: grid; }
+}
+
+@media (max-width: 480px) {
+  .mobile-menu {
+    width: 100%;
+    right: -100%;
+  }
+  
+  .mobile-header {
+    padding: 12px 15px;
+    
+    .site-logo {
+      width: 90px;
+      height: 30px;
+    }
+  }
+  
+  .mobile-menu-btn .hamburger-icon {
+    width: 25px;
+    height: 20px;
+    
+    span {
+      height: 2px;
+      
+      &:nth-child(2) { top: 7px; }
+      &:nth-child(3) { top: 14px; }
+    }
+  }
 }
 </style>

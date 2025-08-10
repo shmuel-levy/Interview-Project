@@ -27,6 +27,19 @@ $bottom-footer-bg: #130822;
 $white: #fff;
 $black: #404040;
 
+$breakpoint-mobile: 480px;
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1024px;
+$breakpoint-large: 1200px;
+
+$mobile-padding: 15px;
+$tablet-padding: 20px;
+$desktop-padding: 30px;
+
+$mobile-gap: 10px;
+$tablet-gap: 15px;
+$desktop-gap: 20px;
+
 :root {
   --color: #{$color-primary};
   --color_black: #{$color-black};
@@ -56,4 +69,17 @@ $black: #404040;
   --bottom-footer-bg: #{$bottom-footer-bg};
   --white: #{$white};
   --black: #{$black};
+  
+  --breakpoint-mobile: #{$breakpoint-mobile};
+  --breakpoint-tablet: #{$breakpoint-tablet};
+  --breakpoint-desktop: #{$breakpoint-desktop};
+  --breakpoint-large: #{$breakpoint-large};
+  
+  --mobile-padding: #{$mobile-padding};
+  --tablet-padding: #{$tablet-padding};
+  --desktop-padding: #{$desktop-padding};
+  
+  --mobile-gap: #{$mobile-gap};
+  --tablet-gap: #{$tablet-gap};
+  --desktop-gap: #{$desktop-gap};
 }

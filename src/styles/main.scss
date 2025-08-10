@@ -47,6 +47,10 @@ body.rtl {
   @media (min-width: 600px) {
     padding-top: 109px;
   }
+  
+  @media (max-width: 599px) {
+    padding-top: 66px;
+  }
 }
 
 .show_in_desktop {
@@ -76,4 +80,112 @@ body.rtl {
 
 .gap_bottom_head {
   margin-bottom: $big-gap;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 $mobile-padding;
+  
+  @media (min-width: $breakpoint-tablet) {
+    padding: 0 $tablet-padding;
+  }
+  
+  @media (min-width: $breakpoint-desktop) {
+    padding: 0 $desktop-padding;
+  }
+}
+
+.grid {
+  display: grid;
+  gap: $mobile-gap;
+  
+  @media (min-width: $breakpoint-tablet) {
+    gap: $tablet-gap;
+  }
+  
+  @media (min-width: $breakpoint-desktop) {
+    gap: $desktop-gap;
+  }
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.hidden {
+  display: none;
+}
+
+.block {
+  display: block;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.inline {
+  display: inline;
+}
+
+@media (max-width: $breakpoint-mobile) {
+  html, body {
+    font-size: 16px;
+  }
+  
+  .container {
+    padding: 0 10px;
+  }
+}
+
+@media (min-width: $breakpoint-tablet) {
+  .container {
+    padding: 0 20px;
+  }
+}
+
+@media (min-width: $breakpoint-desktop) {
+  .container {
+    padding: 0 30px;
+  }
+}
+
+@media (min-width: $breakpoint-large) {
+  .container {
+    padding: 0 40px;
+  }
 }
